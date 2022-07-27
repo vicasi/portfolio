@@ -1,0 +1,16 @@
+<!-- header -->
+<%-include('partials/header')-%>
+
+<h1>compose</h1>
+<form class='form-group' action="/compose" method='post'>
+    <label for="title">title</label>
+    <input class='form-control' type="text" placeholder='compose' name='titleText'>
+    <small class='fom-text text-muted'>you need a title for this action</small>
+    <br>
+    <label for="post">post</label>
+    <textarea class='form-control' rows='3' type="text" placeholder='postText' name='postText'></textarea>
+    <button type='submit' class='btn btn-primary' >publish</button>
+</form>
+
+<!-- footer -->
+<%-include('partials/footer')-%>
