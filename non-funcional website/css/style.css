@@ -1,0 +1,156 @@
+html {
+  background: url("../images/wallpaper.jpg") no-repeat center center fixed;
+  background-color: grey;
+  background-size: cover;
+
+  font-weight: 600;
+  margin: 0;
+}
+
+* {
+  font-family: "Space Grotesk", -apple-system, system-ui, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+nav {
+  display: grid;
+  background-color: #dcdcdc20;
+  grid-template-rows: 16px 33px 15px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#logo {
+  width: 33px;
+  grid-row: 2/3;
+  grid-column: 1/2;
+  margin-left: 25px;
+}
+
+form {
+  grid-row: 2/3;
+  grid-column: 3/ 8;
+  display: grid;
+  grid-template-columns: 33px 1fr;
+  background-color: #dcdcdc90;
+  margin: 0;
+}
+form button {
+  background-color: transparent;
+  border: 0;
+}
+
+#search-text {
+  align-self: center;
+  order: 1;
+  border: 0;
+  background-color: transparent;
+  height: 33px;
+}
+#search-button {
+  width: 18px;
+  fill: #0008;
+}
+
+.user-buttons {
+  grid-column: -1/-4;
+  grid-row: 2/ 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 96;
+  border-style: none;
+  cursor: pointer;
+}
+.login p {
+  font-weight: 700;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+}
+
+.sign-up {
+  display: flex;
+  background-color: #fff;
+  margin: 0;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 3px;
+  height: 32px;
+  width: 96;
+  align-items: center;
+  justify-content: center;
+}
+.sign-up p {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.96);
+}
+
+.photo-author {
+  color: #fff;
+  align-self: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.central-box {
+  height: 90vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-content: center;
+  padding-left: 100px;
+}
+
+.central-text {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding-top: 90px;
+  color: #fff;
+}
+.start-button {
+  width: 200px;
+  height: 65;
+  border-radius: 3px;
+  border-style: none;
+  font-size: 24;
+  font-weight: 700;
+  align-self: center;
+}
+.h1-text {
+  font-size: 56;
+  font-weight: 600;
+  list-style: 56;
+}
+.h3-text {
+  font-size: 26;
+  font-weight: 600;
+}
+
+footer {
+  background-color: black;
+  padding: 24px;
+}
+
+.footnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footnav * {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.96);
+  border-style: none;
+}
