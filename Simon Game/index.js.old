@@ -1,0 +1,75 @@
+$(document).ready(() => {
+  $("body").keydown(function (e) {
+    randomizer();
+    let level = 1;
+    $("#level-title").text("level " + level);
+    // button part ↓↓↓
+
+    let colorSequence = [];
+    let color;
+    function game() {
+      $(".btn").click(function (e) {
+        let btnColor = $(this).attr("class").slice(4);
+        $("." + btnColor).addClass("pressed");
+        setTimeout(function () {
+          $("." + btnColor).removeClass("pressed");
+        }, 800);
+        let colorSound = new Audio("sounds/" + btnColor + ".mp3");
+        colorSound.play();
+        let randomColor = randomizer(btnColor);
+        colorSequence.push(randomColor);
+        Color = colorSequence[colorSequence.length - 1];
+        console.log(
+          "últimos dois itens do array \n" +
+            colorSequence[colorSequence.length - 1],
+          colorSequence[colorSequence.length - 2]
+        );
+        if (btnColor === color) {
+          randomColor();
+        } else {
+          let wrongAudio = new Audio("sounds/wrong.mp3");
+          wrongAudio.play();
+          $("body").addClass("game-over");
+          setTimeout(() => {
+            $("body").removeClass("game-over");
+          }, 1000);
+        }
+      });
+    }
+    game();
+  });
+});
+
+function randomizer(buttonColor) {
+  let currentColor = Math.floor(Math.random() * 4) + 1;
+  switch (currentColor) {
+    case 1:
+      console.log("blue");
+      $("." + buttonColor).addClass("pressed");
+      setTimeout(() => {
+        $("." + buttonColor).removeClass("pressed");
+      }, 1000);
+      return "blue";
+    case 2:
+      console.log("green");
+      $("." + buttonColor).addClass("pressed");
+      setTimeout(() => {
+        $("." + buttonColor).removeClass("pressed");
+      }, 1000);
+      return "green";
+    case 3:
+      console.log("red");
+      $("." + buttonColor).addClass("pressed");
+      setTimeout(() => {
+        $("." + buttonColor).removeClass("pressed");
+      }, 1000);
+      return "red";
+    case 4:
+      console.log("yellow");
+      $("." + buttonColor).addClass("pressed");
+      setTimeout(() => {
+        $("." + buttonColor).removeClass("pressed");
+      }, 1000);
+      return "yellow";
+  }
+}

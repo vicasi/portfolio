@@ -1,0 +1,55 @@
+// http://127.0.0.1:3000/Simon+Game+Challenge+Starting+Files/Simon Game Challenge Starting Files/index.html
+$(document).ready(() => {
+  let level = 1;
+  $("body").on("keydown", () => {
+    $("#level-title").text("level " + level);
+    randomizer();
+    let colorSequence = ["blue"];
+    // colorSequence.push(randomizer());
+    let buttonPressed = $(".btn").click(function () {
+      $("#level-title").text("level " + level);
+      let btnClass = $(this).attr("class").slice(4);
+      if (btnClass === colorSequence[colorSequence.length - 1]) {
+        level += 1;
+        randomizer();
+      } else {
+        $("body").addClass("game-over");
+        setTimeout(() => {
+          $("body").removeClass("game-over");
+        }, 1500);
+      }
+      randomizer();
+    });
+  });
+});
+
+function randomizer() {
+  let colorNumber = Math.floor(Math.random() * 4 + 1);
+  console.log(colorNumber);
+  switch (colorNumber) {
+    case 1:
+      $(".blue").addClass("pressed");
+      setTimeout(() => {
+        $(".blue").removeClass("pressed");
+      }, 1000);
+      return "blue";
+    case 2:
+      $(".green").addClass("pressed");
+      setTimeout(() => {
+        $(".green").removeClass("pressed");
+      }, 1000);
+      return "green";
+    case 3:
+      $(".red").addClass("pressed");
+      setTimeout(() => {
+        $(".red").removeClass("pressed");
+      }, 1000);
+      return "red";
+    case 4:
+      $(".yellow").addClass("pressed");
+      setTimeout(() => {
+        $(".yellow").removeClass("pressed");
+      }, 1000);
+      return "yellow";
+  }
+}
